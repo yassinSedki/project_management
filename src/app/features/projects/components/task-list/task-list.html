@@ -1,0 +1,18 @@
+<div class="mt-4 space-y-2">
+  @if ((tasks?.length || 0) === 0) {
+    <div class="text-sm text-gray-600 italic">Aucune tâche</div>
+  } @else {
+    @for (task of tasks; track task.title) {
+      <div
+        class="border-l-4 p-3 rounded-lg hover:shadow-sm transition-shadow"
+        appHighlightStatus="{{task.status}}"
+      >
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold" [ngClass]="task.priority | priorityColor">{{ task.title }}</h3>
+          <span class="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-700">{{ task.priority }}</span>
+        </div>
+        <p class="text-sm text-gray-600">Statut : {{ task.status }}</p>
+      </div>
+    }
+  }
+</div>

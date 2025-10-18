@@ -1,0 +1,15 @@
+import { Component, Input } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { HighlightStatusDirective } from '../../directives/highlight-status.directive'
+import { PriorityColorPipe } from '../../pipes/priority-color.pipe'
+
+@Component({
+  selector: 'app-task-list',
+  standalone: true,
+  imports: [CommonModule, HighlightStatusDirective, PriorityColorPipe],
+  templateUrl: './task-list.html',
+  styleUrls: ['./task-list.css']
+})
+export class TaskListComponent {
+  @Input() tasks: any[] = []
+}

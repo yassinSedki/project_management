@@ -1,0 +1,4 @@
+/* Styles supplémentaires spécifiques au panneau de détails (optionnel) */
+:host {
+  display: block;
+}
